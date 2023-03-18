@@ -900,6 +900,8 @@ local function main()
 		context:Show()
 	end
 
+	-- Context Registers
+
 	Explorer.InitRightClick = function()
 		local context = Lib.ContextMenu.new()
 
@@ -1220,7 +1222,11 @@ local function main()
 		end})
 
 		context:Register("VIEW_API",{Name = "View API Page", IconMap = Explorer.MiscIcons, Icon = "Reference", OnClick = function()
+			local Selected = node.Obj
+			local Selected2 = selection.List[1] and selection.List[1].Obj
 
+			print("1: ", Selected)
+			print("2: ", Selected2)
 		end})
 
 		context:Register("VIEW_OBJECT",{Name = "View Object (Right click to reset)", IconMap = Explorer.ClassIcons, Icon = 5, OnClick = function()
